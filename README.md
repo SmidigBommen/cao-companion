@@ -12,7 +12,7 @@ Explore the 12 CAO guidelines through Galbraith's Star Model — Strategy, Struc
 - Per-dimension guideline pages with summaries, context, and anti-patterns
 - Key concepts per guideline
 - Mark-as-read progress tracking (localStorage, no account needed)
-- Concept glossary *(in progress)*
+- Searchable concept glossary (33 terms, alphabetically grouped)
 
 ## Tech stack
 

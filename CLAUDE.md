@@ -17,12 +17,13 @@ Stored locally in `documents/` (gitignored — not committed to the repo):
 - **Star Model** — animated SVG pentagon (Framer Motion), clickable vertices, description panel
 - **Dimension pages** — guideline list with localStorage progress tracking per dimension
 - **Guideline pages** — full learning layout: summary, why it matters, anti-pattern, key concepts, prev/next nav
-- **DimensionNav** — top nav bar with dimension tabs + breadcrumb on guideline pages
+- **DimensionNav** — top nav bar with dimension tabs + Glossary link + breadcrumb on guideline pages
 - **Mark as read** — per-guideline toggle, persisted to localStorage (`cao:read`)
-- **Content** — 12 guidelines across 5 dimensions, 34 key concepts, extracted from the book
+- **Glossary** (`/glossary`) — searchable, alphabetical, each concept links back to source guideline (33 concepts)
+- **Content** — 12 guidelines across 5 dimensions, extracted from the book
+- **Deployment** — static export to GitHub Pages via Actions workflow on push to master
 
 ## What's next
-- Concept glossary (`/glossary`) — searchable, alphabetical, links back to source guideline
 - Reflection mechanics (spaced repetition, quizzes)
 - AI chat (last, if at all)
 

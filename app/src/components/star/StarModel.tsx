@@ -61,7 +61,7 @@ export function StarModel() {
     <div className="flex flex-col items-center">
       <svg
         viewBox="0 0 500 480"
-        className="w-full max-w-[440px]"
+        className="w-full max-w-[880px]"
         aria-label="CAO Star Model — click a dimension to explore"
       >
         {/* ── Edges ── */}
@@ -165,7 +165,7 @@ export function StarModel() {
       </svg>
 
       {/* Dimension description — fades in on hover */}
-      <div className="mt-1 h-10 w-full max-w-xs">
+      <div className="mt-1 h-10 w-full max-w-md">
         <AnimatePresence mode="wait">
           {activeDim && (
             <motion.p
