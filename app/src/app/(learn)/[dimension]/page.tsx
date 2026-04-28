@@ -48,21 +48,33 @@ export default async function DimensionPage({ params }: Props) {
 
       <Link
         href={`/${dimension}/self-check`}
-        className="group mt-10 flex items-center justify-between p-5 rounded-lg border border-stone-100 hover:border-stone-300 hover:shadow-sm transition-all"
+        className="group mt-10 flex items-center justify-between gap-4 p-6 rounded-xl border-2 transition-all hover:shadow-md"
+        style={{
+          borderColor: `${color}40`,
+          backgroundColor: `${color}0d`,
+        }}
       >
-        <div className="flex flex-col gap-1 min-w-0">
+        <div
+          className="flex items-center justify-center w-12 h-12 rounded-full flex-shrink-0 text-xl font-semibold"
+          style={{ backgroundColor: color, color: "white" }}
+          aria-hidden
+        >
+          ?
+        </div>
+        <div className="flex flex-col gap-1 min-w-0 flex-1">
           <span
-            className="text-[10px] font-semibold uppercase tracking-widest"
+            className="text-[11px] font-semibold uppercase tracking-widest"
             style={{ color }}
           >
             Self-check
           </span>
-          <span className="text-sm font-medium text-stone-700 group-hover:text-stone-950 transition-colors leading-snug">
+          <span className="text-base font-semibold text-stone-900 leading-snug">
             Recall the concepts from your read guidelines
           </span>
         </div>
         <span
-          className="text-stone-300 group-hover:text-stone-500 transition-colors flex-shrink-0 ml-4"
+          className="text-lg flex-shrink-0 transition-transform group-hover:translate-x-1"
+          style={{ color }}
         >
           →
         </span>
