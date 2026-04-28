@@ -1,8 +1,12 @@
 import { notFound } from "next/navigation";
-import { getDimension } from "@/content/dimensions";
+import { getDimension, dimensions } from "@/content/dimensions";
 import { DIMENSION_COLORS } from "@/lib/colors";
 import { GuidelineList } from "@/components/ui/GuidelineList";
 import type { DimensionId } from "@/lib/types";
+
+export function generateStaticParams() {
+  return dimensions.map(d => ({ dimension: d.id }));
+}
 
 interface Props {
   params: Promise<{ dimension: string }>;

@@ -1,10 +1,16 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getDimension } from "@/content/dimensions";
+import { getDimension, dimensions } from "@/content/dimensions";
 import { DIMENSION_COLORS } from "@/lib/colors";
 import { splitTitle } from "@/lib/utils";
 import { MarkAsRead } from "@/components/ui/MarkAsRead";
 import type { DimensionId } from "@/lib/types";
+
+export function generateStaticParams() {
+  return dimensions.flatMap(d =>
+    d.guidelines.map(g => ({ dimension: d.id, guideline: g.id }))
+  );
+}
 
 interface Props {
   params: Promise<{ dimension: string; guideline: string }>;
