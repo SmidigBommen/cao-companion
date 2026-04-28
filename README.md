@@ -1,5 +1,7 @@
 # CAO Companion
 
+**Live app**: https://smedigbommen.github.io/cao-companion/
+
 An interactive learning app for *Creating Agile Organizations* by Ramos & Pavlichenko.
 
 Explore the 12 CAO guidelines through Galbraith's Star Model — Strategy, Structure, Processes, Rewards, and People — with progress tracking and key concept definitions.
