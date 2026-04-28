@@ -1,1 +1,4 @@
 documents/
+app/node_modules/
+.DS_Store
+app/.next/
