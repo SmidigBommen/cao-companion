@@ -58,7 +58,7 @@ export function StarModel() {
   const activeDim = dimensions.find(d => d.id === active) ?? null;
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-full">
       <svg
         viewBox="0 0 500 480"
         className="w-full max-w-[880px]"
