@@ -4,7 +4,6 @@ import { getDimension, dimensions } from "@/content/dimensions";
 import { DIMENSION_COLORS } from "@/lib/colors";
 import { splitTitle } from "@/lib/utils";
 import { MarkAsRead } from "@/components/ui/MarkAsRead";
-import { ReflectCheck } from "@/components/ui/ReflectCheck";
 import type { DimensionId } from "@/lib/types";
 
 export function generateStaticParams() {
@@ -117,21 +116,23 @@ export default async function GuidelinePage({ params }: Props) {
         </section>
       )}
 
-      {/* Self-check */}
-      <ReflectCheck concepts={data.concepts} color={color} />
-
       {/* Mark as read */}
-      <div className="pt-10 border-t border-stone-100 flex items-center justify-between">
-        <MarkAsRead
-          dimension={dimension}
-          guideline={guideline}
-          color={color}
-        />
-        {(prev || next) && (
-          <span className="text-xs text-stone-400">
-            {index + 1} / {dim.guidelines.length}
-          </span>
-        )}
+      <div className="pt-10 border-t border-stone-100">
+        <div className="flex items-center justify-between">
+          <MarkAsRead
+            dimension={dimension}
+            guideline={guideline}
+            color={color}
+          />
+          {(prev || next) && (
+            <span className="text-xs text-stone-400">
+              {index + 1} / {dim.guidelines.length}
+            </span>
+          )}
+        </div>
+        <p className="text-xs text-stone-400 mt-3">
+          Marking adds these concepts to the {dim.label.toLowerCase()} self-check.
+        </p>
       </div>
 
       {/* Prev / Next */}

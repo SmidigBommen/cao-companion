@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { getDimension, dimensions } from "@/content/dimensions";
 import { DIMENSION_COLORS } from "@/lib/colors";
 import { GuidelineList } from "@/components/ui/GuidelineList";
@@ -44,6 +45,28 @@ export default async function DimensionPage({ params }: Props) {
         dimension={dimension}
         color={color}
       />
+
+      <Link
+        href={`/${dimension}/self-check`}
+        className="group mt-10 flex items-center justify-between p-5 rounded-lg border border-stone-100 hover:border-stone-300 hover:shadow-sm transition-all"
+      >
+        <div className="flex flex-col gap-1 min-w-0">
+          <span
+            className="text-[10px] font-semibold uppercase tracking-widest"
+            style={{ color }}
+          >
+            Self-check
+          </span>
+          <span className="text-sm font-medium text-stone-700 group-hover:text-stone-950 transition-colors leading-snug">
+            Recall the concepts from your read guidelines
+          </span>
+        </div>
+        <span
+          className="text-stone-300 group-hover:text-stone-500 transition-colors flex-shrink-0 ml-4"
+        >
+          →
+        </span>
+      </Link>
 
     </main>
   );
