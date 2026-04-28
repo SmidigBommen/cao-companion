@@ -1,0 +1,146 @@
+<mxfile host="app.diagrams.net" version="24.0.0">
+  <diagram name="App Architecture" id="cao-app-architecture">
+    <mxGraphModel dx="1200" dy="800" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="CAO Companion — App Architecture" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fontColor=#1c1917;" vertex="1" parent="1">
+          <mxGeometry x="180" y="20" width="760" height="36" as="geometry" />
+        </mxCell>
+
+        <!-- ── LAYER LABELS ── -->
+        <mxCell id="lbl-routes" value="ROUTES" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=9;fontStyle=1;fontColor=#78716c;letterSpacing=2;" vertex="1" parent="1">
+          <mxGeometry x="20" y="76" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-components" value="COMPONENTS" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=9;fontStyle=1;fontColor=#78716c;letterSpacing=2;" vertex="1" parent="1">
+          <mxGeometry x="20" y="196" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-content" value="CONTENT" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=9;fontStyle=1;fontColor=#78716c;letterSpacing=2;" vertex="1" parent="1">
+          <mxGeometry x="20" y="316" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-types" value="TYPES" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=9;fontStyle=1;fontColor=#78716c;letterSpacing=2;" vertex="1" parent="1">
+          <mxGeometry x="20" y="466" width="60" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ── ROUTES ── -->
+        <mxCell id="route-home" value="&lt;b&gt;/&lt;/b&gt;&lt;br&gt;Home" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#1c1917;fontColor=#1c1917;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="130" y="66" width="160" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="route-dimension" value="&lt;b&gt;/[dimension]&lt;/b&gt;&lt;br&gt;e.g. /structure" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#1c1917;fontColor=#1c1917;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="430" y="66" width="190" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="route-guideline" value="&lt;b&gt;/[dimension]/[guideline]&lt;/b&gt;&lt;br&gt;e.g. /structure/product-groups" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#1c1917;fontColor=#1c1917;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="760" y="66" width="250" height="56" as="geometry" />
+        </mxCell>
+
+        <!-- route arrows -->
+        <mxCell id="arr-r1" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#1c1917;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="route-home" target="route-dimension" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-r2" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#1c1917;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="route-dimension" target="route-guideline" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ── COMPONENTS ── -->
+        <mxCell id="comp-star" value="&lt;b&gt;StarModel&lt;/b&gt;&lt;br&gt;SVG pentagon · Framer Motion&lt;br&gt;5 clickable points" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;fontColor=#1e3a8a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="130" y="186" width="160" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-dimpage" value="&lt;b&gt;DimensionPage&lt;/b&gt;&lt;br&gt;Label · description&lt;br&gt;GuidelineCard list" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;fontColor=#1e3a8a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="430" y="186" width="190" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-glpage" value="&lt;b&gt;GuidelinePage&lt;/b&gt;&lt;br&gt;Summary · Why it matters&lt;br&gt;Anti-pattern · Key concepts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;fontColor=#1e3a8a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="760" y="186" width="250" height="66" as="geometry" />
+        </mxCell>
+
+        <!-- route -> component arrows -->
+        <mxCell id="arr-c1" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#2563eb;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="route-home" target="comp-star" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-c2" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#2563eb;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="route-dimension" target="comp-dimpage" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-c3" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#2563eb;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="route-guideline" target="comp-glpage" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ── CONTENT LAYER ── -->
+        <mxCell id="content-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef9c3;strokeColor=#d6b656;opacity=40;" vertex="1" parent="1">
+          <mxGeometry x="130" y="306" width="560" height="116" as="geometry" />
+        </mxCell>
+        <mxCell id="content-label" value="content/dimensions/" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontStyle=1;fontColor=#92400e;" vertex="1" parent="1">
+          <mxGeometry x="140" y="310" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="f-strategy" value="strategy.ts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef9c3;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="140" y="336" width="90" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="f-structure" value="structure.ts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef9c3;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="242" y="336" width="90" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="f-processes" value="processes.ts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef9c3;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="344" y="336" width="90" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="f-rewards" value="rewards.ts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef9c3;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="446" y="336" width="90" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="f-people" value="people.ts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef9c3;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="548" y="336" width="90" height="36" as="geometry" />
+        </mxCell>
+
+        <mxCell id="index-ts" value="&lt;b&gt;index.ts&lt;/b&gt;&lt;br&gt;getDimension() · getGuideline()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;fontColor=#92400e;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="730" y="316" width="220" height="56" as="geometry" />
+        </mxCell>
+
+        <!-- content files -> index.ts -->
+        <mxCell id="arr-idx" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#d97706;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="content-bg" target="index-ts" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- component -> content arrows -->
+        <mxCell id="arr-d1" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#d97706;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="comp-star" target="content-bg" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-d2" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#d97706;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="comp-dimpage" target="index-ts" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-d3" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#d97706;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="comp-glpage" target="index-ts" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ── TYPES ── -->
+        <mxCell id="types-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce7f3;strokeColor=#9d174d;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="130" y="456" width="820" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="types-label" value="lib/types.ts" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontStyle=1;fontColor=#9d174d;" vertex="1" parent="1">
+          <mxGeometry x="140" y="460" width="120" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="t-dimension" value="&lt;b&gt;Dimension&lt;/b&gt;&lt;br&gt;id · label · description · guidelines[]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce7f3;strokeColor=#9d174d;fontColor=#9d174d;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="140" y="482" width="220" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="t-guideline" value="&lt;b&gt;Guideline&lt;/b&gt;&lt;br&gt;id · title · summary · why · antiPattern · concepts[]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce7f3;strokeColor=#9d174d;fontColor=#9d174d;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="400" y="482" width="290" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="t-concept" value="&lt;b&gt;Concept&lt;/b&gt;&lt;br&gt;term · definition" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce7f3;strokeColor=#9d174d;fontColor=#9d174d;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="730" y="482" width="180" height="46" as="geometry" />
+        </mxCell>
+
+        <!-- type relationship arrows -->
+        <mxCell id="arr-t1" value="1..*" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#9d174d;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=9;" edge="1" source="t-dimension" target="t-guideline" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-t2" value="1..*" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#9d174d;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=9;" edge="1" source="t-guideline" target="t-concept" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- content/types usage arrow -->
+        <mxCell id="arr-ct" value="implements" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#9d174d;dashed=1;fontSize=9;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="content-bg" target="types-bg" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
