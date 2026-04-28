@@ -4,6 +4,7 @@ import { getDimension, dimensions } from "@/content/dimensions";
 import { DIMENSION_COLORS } from "@/lib/colors";
 import { splitTitle } from "@/lib/utils";
 import { MarkAsRead } from "@/components/ui/MarkAsRead";
+import { ReflectCheck } from "@/components/ui/ReflectCheck";
 import type { DimensionId } from "@/lib/types";
 
 export function generateStaticParams() {
@@ -115,6 +116,9 @@ export default async function GuidelinePage({ params }: Props) {
           </dl>
         </section>
       )}
+
+      {/* Self-check */}
+      <ReflectCheck concepts={data.concepts} color={color} />
 
       {/* Mark as read */}
       <div className="pt-10 border-t border-stone-100 flex items-center justify-between">
